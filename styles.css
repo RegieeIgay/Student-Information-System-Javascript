@@ -1,0 +1,19 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .form{
+  margin-top: 250px;
+ }
+ .form2{
+    margin-top: 25px;
+   }
+ @keyframes bounce {
+     0%, 100% { transform: translateY(0); }
+     50% { transform: translateY(-10px); }
+ }
+ 
+ .animate-bounce {
+     animation: bounce 1s infinite;
+     margin-left: 95px;
+ }

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Student</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark d-flex flex-column min-vh-100">
+    <nav class="navbar bg-success bg-opacity-75 d-flex space-between sticky-top">
+        <div class="container-fluid">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#toggleButton" aria-controls="toggleButton">
+                <img src="toogle.png" style="width: 20px; height: auto;" alt="Toggle Icon"/>
+            </button>
+            <a class="navbar-brand border border-1 border-white rounded px-2 py-1 text-white" href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="toggleButton" aria-labelledby="toggleButtonLabel">
+        <div class="offcanvas-header bg-success bg-opacity-75">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body bg-success bg-opacity-75">
+            <div class="container-fluid">
+                <div class="list-group text-center" id="myList" role="tablist">
+                    <a class="list-group-item list-group-item-action" href="home.html" role="tab">Home</a>
+                    <a class="list-group-item list-group-item-action active" href="adddata.html" role="tab">Add Data</a>
+                    <a class="list-group-item list-group-item-action " href="list.html" role="tab">List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="d-flex justify-content-center">
+        <form id="dataForm" class="form2 border border-success border-4 rounded p-5 text-center text-white">
+            <div class="mb-3">
+                <p class="h1 text-bold text-white">Enroll Student</p>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" class="form-control text-center" id="firstName" placeholder="Enter First Name" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="middleName" class="form-label">Middle Name:</label>
+                    <input type="text" class="form-control text-center" id="middleName" placeholder="Enter Middle Name">
+                </div>
+                <div class="col-md-4">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control text-center" id="lastName" placeholder="Enter Last Name" required>
+                </div>
+            </div>
+    
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" class="form-control text-center" id="age" placeholder="Enter Age" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="gender" class="form-label">Gender:</label>
+                    <select class="form-select text-center" id="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-4">
+                    <label for="yearLevel" class="form-label">Year Level:</label>
+                    <select class="form-select text-center" id="yearLevel" required>
+                        <option value="" disabled selected>Select Year Level</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="course" class="form-label">Course:</label>
+                    <select class="form-select text-center" id="course" required>
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="BSIT">BS Information Technology</option>
+                        <option value="BSAB">BS Agricultural Business</option>
+                        <option value="BSHM">BS Hospitality Management</option>
+                        <option value="BSED">Bachelor of Secondary Education</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-4">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" class="form-control text-center" id="address" placeholder="Enter Address" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="mobile" class="form-label">Mobile Number:</label>
+                    <input type="number" class="form-control text-center" id="mobile" placeholder="Enter Mobile Number" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="birthDay" class="form-label">Birth Day:</label>
+                    <select class="form-select text-center" id="birthDay" required>
+                        <option value="" disabled selected>Select Day</option>
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="birthMonth" class="form-label">Birth Month:</label>
+                    <select class="form-select text-center" id="birthMonth" required>
+                        <option value="" disabled selected>Select Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="birthYear" class="form-label">Birth Year:</label>
+                    <select class="form-select text-center" id="birthYear" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <script>
+                            const currentYear = new Date().getFullYear();
+                            for (let year = currentYear; year >= 1900; year--) {
+                                document.write(`<option value="${year}">${year}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="fatherFirstName" class="form-label">Father's First Name:</label>
+                    <input type="text" class="form-control text-center" id="fatherFirstName" placeholder="Enter Father's First Name" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="fatherLastName" class="form-label">Father's Last Name:</label>
+                    <input type="text" class="form-control text-center" id="fatherLastName" placeholder="Enter Father's Last Name" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="fatherContact" class="form-label">Father's Contact Number:</label>
+                    <input type="number" class="form-control text-center" id="fatherContact" placeholder="Enter Father's Contact" required>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="motherFirstName" class="form-label">Mother's First Name:</label>
+                    <input type="text" class="form-control text-center" id="motherFirstName" placeholder="Enter Mother's First Name" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="motherLastName" class="form-label">Mother's Last Name:</label>
+                    <input type="text" class="form-control text-center" id="motherLastName" placeholder="Enter Mother's Last Name" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="motherContact" class="form-label">Mother's Contact Number:</label>
+                    <input type="number" class="form-control text-center" id="motherContact" placeholder="Enter Mother's Contact" required>
+                </div>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success w-full text-center">Save Data</button>
+        </form>
+    </main>
+    
+    <footer class="text-center mt-auto bg-success py-3">
+        <p class="text-white mb-0">Created by Regie Igay</p>
+        <p class="text-white mb-0">© 2024 All Rights Reserved</p>
+        <p class="text-white mb-0">Contact: <a href="mailto:regie.igay@example.com" class="text-white">regie.igay@gmail.com</a></p>
+        <p class="text-white mb-0">Follow us on:
+            <a href="#" class="text-white">Facebook</a> | 
+            <a href="#" class="text-white">Twitter</a> | 
+            <a href="#" class="text-white">LinkedIn</a>
+        </p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
